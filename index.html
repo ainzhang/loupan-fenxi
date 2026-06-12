@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>成都·怡心湖&麓湖楼盘分析报告</title>
+<style>
+*,::before,::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#f2f4f6;--card:#fff;--text:#2d3748;--sub:#718096;--red:#e53e3e;--red-bg:#fff5f5;
+  --orange:#dd6b20;--orange-bg:#fffaf0;--green:#38a169;--green-bg:#f0fff4;--blue:#3182ce;--blue-bg:#f0f7ff;
+  --shadow:0 2px 8px rgba(0,0,0,.06);--radius:14px;--font:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;-webkit-text-size-adjust:100%;overflow-x:hidden}
+.container{max-width:760px;margin:0 auto;padding:0 0 60px;min-height:100vh}
+
+.navbar{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(0,0,0,.06)}
+.navbar .back-btn{width:34px;height:34px;border-radius:50%;border:none;background:var(--bg);color:var(--text);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s}
+.navbar .back-btn:active{background:#e2e8f0}
+.navbar .nav-title{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.navbar .nav-sub{font-size:11px;color:var(--sub)}
+
+.page{display:none}
+.page.active{display:block}
+
+.hero-home{background:linear-gradient(135deg,#0f1f2d 0%,#143449 40%,#1a4d68 100%);color:#fff;padding:32px 20px 24px;text-align:center;margin-bottom:8px}
+.hero-home h1{font-size:20px;font-weight:700;margin-bottom:4px}
+.hero-home p{font-size:12px;opacity:.65;line-height:1.5}
+.hero-home .tag-row{display:flex;justify-content:center;gap:6px;margin-top:14px;flex-wrap:wrap}
+.hero-home .htag{font-size:10px;padding:3px 10px;border-radius:10px;font-weight:600;background:rgba(255,255,255,.13)}
+
+.section-header{padding:14px 16px 4px;font-size:13px;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.5px}
+
+.prop-card{background:var(--card);margin:0 12px 10px;border-radius:var(--radius);padding:18px 16px;box-shadow:var(--shadow);cursor:pointer;transition:transform .15s,box-shadow .15s;position:relative;overflow:hidden}
+.prop-card:active{transform:scale(.985);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.prop-card .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.prop-card .card-name{font-size:18px;font-weight:700;color:#1a202c}
+.prop-card .card-badge{font-size:10px;padding:2px 8px;border-radius:8px;font-weight:600;white-space:nowrap}
+.badge-red{background:var(--red-bg);color:var(--red)}
+.badge-orange{background:var(--orange-bg);color:var(--orange)}
+.badge-green{background:var(--green-bg);color:var(--green)}
+.badge-blue{background:var(--blue-bg);color:var(--blue)}
+.badge-black{background:#1a1a1a;color:#fc8181}
+
+.prop-card .card-meta{display:flex;gap:16px;font-size:13px;color:var(--sub);margin-bottom:6px;flex-wrap:wrap}
+.prop-card .card-meta span{display:flex;align-items:center;gap:4px}
+.prop-card .card-desc{font-size:12px;color:#888;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.prop-card .card-arrow{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:18px;color:#ccc;transition:color .15s}
+.prop-card:hover .card-arrow{color:var(--blue)}
+
+.compare-row{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:6px 12px 14px}
+.compare-cell{background:var(--card);border-radius:10px;padding:10px 8px;text-align:center;box-shadow:var(--shadow)}
+.compare-cell .cc-name{font-size:11px;font-weight:600;color:#1a202c;margin-bottom:2px}
+.compare-cell .cc-price{font-size:12px;font-weight:700;color:var(--red)}
+.compare-cell .cc-tag{font-size:9px;display:inline-block;padding:1px 6px;border-radius:6px;margin-top:2px}
+
+.detail-hero{padding:24px 20px 20px;color:#fff;text-align:center;position:relative}
+.detail-hero.dh-red{background:linear-gradient(135deg,#822727,#c53030)}
+.detail-hero.dh-green{background:linear-gradient(135deg,#22543d,#2f855a)}
+.detail-hero.dh-blue{background:linear-gradient(135deg,#1e3a5f,#2b6cb0)}
+.detail-hero.dh-black{background:linear-gradient(135deg,#1a0000,#3d1111,#5c1a1a)}
+.detail-hero h1{font-size:22px;font-weight:700;margin-bottom:4px}
+.detail-hero .dh-sub{font-size:12px;opacity:.75;line-height:1.6}
+.detail-hero .dh-tags{display:flex;justify-content:center;gap:6px;margin-top:10px;flex-wrap:wrap}
+.detail-hero .dht{font-size:10px;padding:3px 10px;border-radius:10px;font-weight:600;background:rgba(255,255,255,.16)}
+
+.detail-body{padding:0 12px}
+
+.dcard{background:var(--card);margin:0 0 10px;border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.dcard.red-border{border-left:3px solid var(--red)}
+.dcard.orange-border{border-left:3px solid var(--orange)}
+.dcard.green-border{border-left:3px solid var(--green)}
+.dcard.blue-border{border-left:3px solid var(--blue)}
+.dcard.black-border{border-left:3px solid #111;background:#fafafa}
+
+.dcard h2{font-size:16px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.dcard h3{font-size:14px;font-weight:600;margin:12px 0 6px;color:#2d3748}
+
+table{width:100%;border-collapse:collapse;font-size:12px;margin:6px 0}
+th,td{padding:7px 8px;text-align:left;border-bottom:1px solid #edf2f7;vertical-align:top;line-height:1.5}
+th{background:#f7fafc;font-weight:600;color:#555;font-size:11px;white-space:nowrap;width:34%}
+tr:last-child td{border-bottom:none}
+
+.highlight{background:linear-gradient(180deg,transparent 60%,#fefcbf 60%);font-weight:600}
+.price-big{font-size:20px;font-weight:700;color:var(--red);display:block;text-align:center}
+
+.callout{padding:9px 12px;border-radius:8px;font-size:12px;line-height:1.6;margin:6px 0}
+.callout-warn{background:#fffbeb;border:1px solid #fbd38d;color:#975a16}
+.callout-red{background:var(--red-bg);border:1px solid #feb2b2;color:#9b2c2c}
+.callout-green{background:var(--green-bg);border:1px solid #c6f6d5;color:#22543d}
+.callout-info{background:var(--blue-bg);border:1px solid #bee3f8;color:#2a4365}
+.callout-black{background:#1a1a1a;border:1px solid #e53e3e;color:#f0f0f0}
+
+.risk-grid{display:grid;grid-template-columns:1fr;gap:6px;margin:8px 0}
+.risk-item{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:#f7fafc;border-radius:8px}
+.risk-icon{font-size:20px;flex-shrink:0;width:30px;text-align:center}
+.risk-body{flex:1;min-width:0}
+.risk-title{font-weight:600;font-size:13px;margin-bottom:1px}
+.risk-desc{font-size:11px;color:#666;line-height:1.5}
+
+.score-bar{display:flex;align-items:center;gap:6px;margin:4px 0}
+.score-label{font-size:11px;width:80px;flex-shrink:0;font-weight:500}
+.score-track{flex:1;height:7px;background:#e2e8f0;border-radius:4px;overflow:hidden}
+.score-fill{height:100%;border-radius:4px}
+.score-num{font-size:12px;font-weight:600;width:30px;text-align:right}
+.fill-red{background:#fc8181}.fill-orange{background:#f6ad55}.fill-yellow{background:#f6e05e}.fill-green{background:#68d391}
+
+.checklist{list-style:none;padding:0}
+.checklist li{padding:6px 0 6px 20px;position:relative;font-size:12px;border-bottom:1px solid #f7fafc;line-height:1.5}
+.checklist li::before{content:'☑';position:absolute;left:0;color:var(--green);font-weight:700;font-size:12px}
+.checklist li:last-child{border-bottom:none}
+
+.verdict-box{border-radius:var(--radius);color:#fff;padding:18px 16px;margin:10px 0;background:linear-gradient(135deg,#1a202c,#2d3748)}
+.verdict-box h2{color:#fff;font-size:15px}
+.verdict-box p{font-size:13px;line-height:1.7;opacity:.92}
+.verdict-tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:10px;font-weight:600;margin:2px}
+.vt-green{background:var(--green);color:#fff}
+.vt-red{background:var(--red);color:#fff}
+.vt-yellow{background:var(--orange);color:#fff}
+
+.divider{height:1px;background:#e2e8f0;margin:12px 0}
+
+.footer{text-align:center;color:#a0aec0;font-size:10px;padding:18px 16px 0;line-height:1.6}
+
+@media(min-width:600px){
+  .risk-grid{grid-template-columns:1fr 1fr}
+  .container{max-width:800px}
+  .detail-body{padding:0 20px}
+  .prop-card{margin:0 20px 12px;padding:20px}
+  .prop-card .card-name{font-size:20px}
+  .prop-card .card-arrow{font-size:22px}
+  .hero-home{padding:40px 24px 32px}
+  .hero-home h1{font-size:24px}
+  .compare-row{margin:8px 20px 16px;gap:8px;grid-template-columns:repeat(4,1fr)}
+  .compare-cell{padding:14px 10px}
+  .compare-cell .cc-name{font-size:13px}
+  .compare-cell .cc-price{font-size:14px}
+  .section-header{padding:14px 20px 6px}
+}
+
+@media(min-width:900px){
+  .container{max-width:860px}
+  .prop-card{transition:transform .2s,box-shadow .2s}
+  .prop-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
+  .prop-card .card-arrow{opacity:0;transition:opacity .2s,color .2s}
+  .prop-card:hover .card-arrow{opacity:1}
+}
+</style>
+</head>
+<body>
+<div class="container" id="app">
+
+<nav class="navbar" id="navbar">
+  <button class="back-btn" id="backBtn" onclick="goHome()" aria-label="返回">←</button>
+  <div>
+    <div class="nav-title" id="navTitle">成都楼盘分析</div>
+    <div class="nav-sub" id="navSub">怡心湖 · 麓湖</div>
+  </div>
+</nav>
+
+<!-- ========== HOME PAGE ========== -->
+<div class="page active" id="page-home">
+
+  <div class="hero-home">
+    <h1>🏠 成都·怡心湖&麓湖 楼盘分析</h1>
+    <p>嘉禾朗宸府 · 怡湖春晓 · 越秀湖与白 · 万科公园传奇<br>四盘深度对比分析报告</p>
+    <div class="tag-row">
+      <span class="htag">🔍 环境硬伤</span>
+      <span class="htag">📐 户型详解</span>
+      <span class="htag">💰 真实价格</span>
+      <span class="htag">⚠️ 维权风险</span>
+      <span class="htag">🏗️ 结构安全</span>
+    </div>
+  </div>
+
+  <div class="section-header">📊 四盘速览对比</div>
+  <div class="compare-row">
+    <div class="compare-cell">
+      <div class="cc-name">🏠 嘉禾朗宸府</div>
+      <div class="cc-price">270-290万</div>
+      <span class="cc-tag badge-orange">126㎡</span>
+    </div>
+    <div class="compare-cell">
+      <div class="cc-name">🏞️ 怡湖春晓</div>
+      <div class="cc-price">240-550万</div>
+      <span class="cc-tag badge-blue">139/215㎡</span>
+    </div>
+    <div class="compare-cell">
+      <div class="cc-name">🌊 越秀湖与白</div>
+      <div class="cc-price">279-530万</div>
+      <span class="cc-tag badge-green">128-178㎡</span>
+    </div>
+    <div class="compare-cell">
+      <div class="cc-name">🏗️ 万科公园传奇</div>
+      <div class="cc-price">310-520万</div>
+      <span class="cc-tag badge-black">165㎡二手</span>
+    </div>
+  </div>
+
+  <div class="section-header">📋 详细分析报告 · 点击查看</div>
+
+  <div class="prop-card" onclick="showDetail('jiahe')">
+    <div class="card-top">
+      <div class="card-name">🏠 嘉禾朗宸府</div>
+      <span class="card-badge badge-orange">⚠️ 玻璃厂风险</span>
+    </div>
+    <div class="card-meta">
+      <span>📐 126㎡</span><span>💰 270-290万</span><span>🚇 19号线 50m</span>
+    </div>
+    <div class="card-desc">超高得房率~130%，真地铁盘。但紧邻南玻700亩玻璃厂工业区，存在空气异味投诉记录。温家山路周边本质为老工业区。</div>
+    <div class="card-arrow">›</div>
+  </div>
+
+  <div class="prop-card" onclick="showDetail('yihu')">
+    <div class="card-top">
+      <div class="card-name">🏞️ 怡湖春晓</div>
+      <span class="card-badge badge-blue">国企开发</span>
+    </div>
+    <div class="card-meta">
+      <span>📐 139/215㎡</span><span>💰 240-550万</span><span>🚇 5号线 700m</span>
+    </div>
+    <div class="card-desc">兴城人居纯国企，1.5超低容积率，272户纯改善圈层。但"湖景"仅为怡心湖引出的一弯浅水，270°落地窗隐私差、能耗高。</div>
+    <div class="card-arrow">›</div>
+  </div>
+
+  <div class="prop-card" onclick="showDetail('yuexiu')">
+    <div class="card-top">
+      <div class="card-name">🌊 越秀湖与白</div>
+      <span class="card-badge badge-red">🚨 减配维权</span>
+    </div>
+    <div class="card-meta">
+      <span>📐 128/143/178㎡</span><span>💰 279-530万</span><span>🚇 5/19号线 760m</span>
+    </div>
+    <div class="card-desc">越秀千亿国企，产品力三盘最强。但2025年爆发减配维权事件，8大项景观/水景/架空层缩水，开发商推诿。2026年7月交房。</div>
+    <div class="card-arrow">›</div>
+  </div>
+
+  <div class="prop-card" onclick="showDetail('wanke')" style="border:1px solid #ecc">
+    <div class="card-top">
+      <div class="card-name">🏗️ 万科公园传奇</div>
+      <span class="card-badge badge-black">🚨🚨 结构安全</span>
+    </div>
+    <div class="card-meta">
+      <span>📐 165㎡</span><span>💰 310-520万</span><span>🌳 麓湖·已交付</span>
+    </div>
+    <div class="card-desc">万科集团+麓湖板块+天府C学区+红石公园。但司法鉴定确认楼板混凝土强度严重不达标（C11.8 vs 要求C30），楼板开裂最宽3mm，已失去承载能力。涉及结构安全！</div>
+    <div class="card-arrow">›</div>
+  </div>
+
+  <div class="footer">
+    <p>报告基于公开信息整理（乐居网、房天下、贝壳、搜狐焦点、问政四川、克而瑞等）</p>
+    <p>数据截至 2026.06 · 仅供参考 · 不构成购房建议</p>
+  </div>
+</div>
+
+<!-- ========== DETAIL: 嘉禾朗宸府 ========== -->
+<div class="page" id="page-jiahe">
+  <div class="detail-hero dh-red">
+    <h1>🏠 嘉禾朗宸府</h1>
+    <div class="dh-sub">成都 · 双流 · 华府板块<br>📍 怡心街道温家山路208号</div>
+    <div class="dh-tags"><span class="dht">🏗️ 嘉禾兴×空港兴城</span><span class="dht">📐 126㎡</span><span class="dht">💰 270-290万</span></div>
+  </div>
+  <div class="detail-body">
+    <div class="dcard"><h2>📋 楼盘速览</h2><table><tr><th>位置</th><td>双流区怡心街道温家山路208号</td></tr><tr><th>开发商</th><td>成都嘉禾兴 + 空港兴城置业（国企联合民企）</td></tr><tr><th>容积率</th><td>2.0 / 绿化率 35.2%</td></tr><tr><th>总户数</th><td>822户 / 17栋（14F-17F小高层）</td></tr><tr><th>物业</th><td>绿城物业 | 3.5元/㎡/月</td></tr><tr><th>装修</th><td>清水交付 / 交房 2027年底</td></tr></table></div>
+    <div class="dcard green-border"><h2>💰 126㎡ 户型 & 价格</h2><table><tr><th>建筑面积</th><td>约 126-127㎡（四室两厅三卫）</td></tr><tr><th>实际使用面积</th><td>约 <strong>158㎡</strong>（宣传得房率 ~130%）</td></tr><tr><th>客厅</th><td>约 7.4m 横厅 / 私梯入户</td></tr><tr><th>⚠️ 暗卫</th><td style="color:#e53e3e"><strong>存在 1 个暗卫</strong></td></tr><tr><th>总价</th><td style="color:#e53e3e;font-weight:700;font-size:16px">约 270万 ~ 290万</td></tr></table><div class="callout callout-info">📊 按实用面积158㎡折算，实用单价约 1.7~1.84万/㎡，同区域有较强竞争力。</div></div>
+    <div class="dcard red-border"><h2>🏭 最大风险：邻近大型玻璃厂工业区</h2><h3>成都南玻玻璃有限公司</h3><table><tr><th>地址</th><td>公兴街道<strong>黄龙大道二段16号</strong></td></tr><tr><th>规模</th><td>占地 <strong>700+ 亩</strong>，员工近千人，投资超10亿</td></tr></table><h3>🤢 污染投诉记录</h3><table><tr><th>2021年</th><td>华府板块居民投诉<strong>持续刺鼻异味</strong>，点名南玻</td></tr><tr><th>持续</th><td>异味问题长期存在，"白天合规、晚上偷排"</td></tr></table><div class="callout callout-red">🚨 700亩工厂投资超10亿，<strong>不可能搬迁</strong>。温家山路道路名"国玻四路"暴露工业区本质。</div></div>
+    <div class="dcard orange-border"><h2>⚠️ 周边其他不利因素</h2><table><tr><th>⚡ 变电站</th><td>区域110kV/220kV电力设施，高压线迁改进展缓慢</td></tr><tr><th>🗑️ 垃圾站</th><td>华府垃圾压缩站（长顺大道290号），有投诉</td></tr><tr><th>📉 板块劣势</th><td>二圈层地段，华府F4二手房普遍难赚钱</td></tr></table></div>
+    <div class="dcard green-border"><h2>✅ 核心优势</h2><table><tr><td>🚇</td><td>19号线温家山站 ~50-400m，真地铁盘</td></tr><tr><td>📐</td><td>超高得房率 ~130%，126㎡实得约158㎡</td></tr><tr><td>🏊</td><td>3600㎡下沉会所：恒温泳池、健身房、影音室</td></tr><tr><td>🏫</td><td>棠湖中学怡心实验学校（九年一贯制）约800m</td></tr></table></div>
+    <div class="dcard blue-border"><h2>📋 看房清单</h2><ul class="checklist"><li>开车绕行温家山路→黄龙大道，感受玻璃厂实际距离</li><li>不同时段（尤其傍晚/夜间）实地感受是否有异味</li><li>要求查看《红线内外不利因素公示》</li><li>126㎡样板间重点看暗卫通风+各卧室尺度</li></ul></div>
+    <div class="verdict-box"><h2>🎯 综合判断</h2><p>适合：<span class="verdict-tag vt-green">预算270-290万</span> <span class="verdict-tag vt-green">依赖地铁</span> <span class="verdict-tag vt-green">注重得房率</span></p><p style="margin-top:8px">不适合：<span class="verdict-tag vt-red">对工业污染零容忍</span> <span class="verdict-tag vt-red">期待短期增值</span></p></div>
+  </div>
+</div>
+
+<!-- ========== DETAIL: 怡湖春晓 ========== -->
+<div class="page" id="page-yihu">
+  <div class="detail-hero dh-green">
+    <h1>🏞️ 怡湖春晓</h1>
+    <div class="dh-sub">成都 · 双流 · 怡心湖C区<br>📍 怡心街道双塘社区6组、高峰社区3组</div>
+    <div class="dh-tags"><span class="dht">🏢 兴城人居（纯国企）</span><span class="dht">📐 139/215㎡</span><span class="dht">💰 240-550万</span></div>
+  </div>
+  <div class="detail-body">
+    <div class="dcard"><h2>📋 楼盘速览</h2><table><tr><th>位置</th><td>双流区怡心街道双塘社区6组、高峰社区3组（怡心湖C区）</td></tr><tr><th>开发商</th><td>兴城人居（纯国企）+ 空港兴城</td></tr><tr><th>容积率</th><td><strong>1.5</strong>（超低密）/ 绿化率 35%</td></tr><tr><th>总户数</th><td><strong>272户</strong> / 12栋（16-21F小高层）</td></tr><tr><th>物业</th><td>人居智慧科技 | 3.5元/㎡/月</td></tr><tr><th>装修</th><td>清水交付 / 交房 2027年底</td></tr></table></div>
+    <div class="dcard green-border"><h2>💰 户型 & 价格</h2><table><tr><th>139㎡（三室两厅三卫）</th><td>约 <strong>240-330万</strong> | 270°边厅</td></tr><tr><th>215㎡（四室两厅三卫）</th><td>约 <strong>430-550万</strong> | 超50㎡客餐厅 | 3.3m层高</td></tr></table></div>
+    <div class="dcard red-border"><h2>显性硬伤：湖景夸大+落地窗隐私/能耗</h2><div class="risk-grid"><div class="risk-item"><div class="risk-icon">🏞️</div><div class="risk-body"><div class="risk-title">"湖景"严重夸大 — 🔴🔴🔴🔴 高</div><div class="risk-desc">宣传"湖居"，实际仅为怡心湖引出的一弯浅水。</div></div></div><div class="risk-item"><div class="risk-icon">👁️</div><div class="risk-body"><div class="risk-title">270°落地窗隐私堪忧 — 🔴🔴🔴🔴 高</div><div class="risk-desc">阵列式排布+大面积玻璃，室内一览无余。</div></div></div><div class="risk-item"><div class="risk-icon">🔥</div><div class="risk-body"><div class="risk-title">大面积玻璃能耗高 — 🔴🔴🔴 中高</div><div class="risk-desc">夏热冬凉，空调地暖费用高。</div></div></div><div class="risk-item"><div class="risk-icon">📏</div><div class="risk-body"><div class="risk-title">得房率体感存疑 — 🔴🔴🔴 中高</div><div class="risk-desc">宣传120%但踩盘反映卧室偏小。</div></div></div></div></div>
+    <div class="dcard orange-border"><h2>🕵️ 隐性硬伤</h2><table><tr><th>🚰 排污</th><td>区域有公兴再生水厂+工业污水处理厂二期，C区不紧邻</td></tr><tr><th>🗑️ 环卫</th><td>未发现C区紧邻垃圾中转站，但需关注控规</td></tr><tr><th>🌾 农业</th><td>原农用地→住宅，土壤安全。C区仍在开发中</td></tr><tr><th>🏭 其他</th><td>南玻玻璃厂距C区>2km；工业污染风险低于嘉禾朗宸府</td></tr></table></div>
+    <div class="dcard green-border"><h2>✅ 核心优势</h2><table><tr><td>🏗️</td><td>1.5超低容积率，272户纯改善圈层</td></tr><tr><td>🏢</td><td>兴城人居纯国企，交付安全性高</td></tr><tr><td>🌊</td><td>怡心湖C区核心，规划能级高</td></tr><tr><td>🚇</td><td>三地铁环绕（5/19/6号线）</td></tr><tr><td>🏫</td><td>树德中学怡心湖学校（在建）</td></tr></table></div>
+    <div class="verdict-box"><h2>🎯 综合判断</h2><p>适合：<span class="verdict-tag vt-green">不急入住</span> <span class="verdict-tag vt-green">看重圈层</span> <span class="verdict-tag vt-green">信任国企</span></p><p style="margin-top:8px">不适合：<span class="verdict-tag vt-red">对隐私高要求</span> <span class="verdict-tag vt-red">追求真湖景</span></p></div>
+  </div>
+</div>
+
+<!-- ========== DETAIL: 越秀湖与白 ========== -->
+<div class="page" id="page-yuexiu">
+  <div class="detail-hero dh-blue">
+    <h1>🌊 越秀湖与白</h1>
+    <div class="dh-sub">成都 · 双流 · 怡心湖板块<br>📍 华府大道四段1027号</div>
+    <div class="dh-tags"><span class="dht">🏢 越秀集团（千亿国企）</span><span class="dht">📐 128/143/178㎡</span><span class="dht">💰 279-530万</span></div>
+  </div>
+  <div class="detail-body">
+    <div class="dcard"><h2>📋 楼盘速览</h2><table><tr><th>位置</th><td>华府大道四段1027号（怡心湖板块核心）</td></tr><tr><th>开发商</th><td>越秀集团（广州市属千亿国企）</td></tr><tr><th>容积率</th><td>2.0 / 绿化率 35%</td></tr><tr><th>总户数</th><td><strong>839户</strong> / 24栋（板楼+洋房+小高层）</td></tr><tr><th>物业</th><td>广州越秀物业 | 3.3元/㎡/月</td></tr><tr><th>装修</th><td>一期毛坯 / 二期精装</td></tr><tr><th>交房</th><td><strong style="color:#38a169">2026年7月15日</strong></td></tr></table></div>
+    <div class="dcard green-border"><h2>🏠 主力户型 & 价格</h2><table><tr><th>128㎡ 四房两厅两卫</th><td style="color:#e53e3e;font-weight:600">约 300-400万</td></tr><tr><td colspan="2">「三厅主义」入门：学习厅+休闲厅+观景厅。横厅衔接景观阳台。</td></tr><tr><th>143㎡ 四房两厅两卫</th><td style="color:#e53e3e;font-weight:600">约 371-450万</td></tr><tr><td colspan="2">7.2米景观阳台，南北双阳台。三厅布局优化。</td></tr><tr><th>178㎡ 四房两厅三卫</th><td style="color:#e53e3e;font-weight:600">约 530万+</td></tr><tr><td colspan="2">升级三厅主义，瞰湖小高层。双主卧套房。</td></tr></table><div class="callout callout-info">💡 一期毛坯约2.3万/㎡，二期精装约3.1万/㎡。🖼️ 户型图访问：sohu.com/a/916278476_121909397</div></div>
+    <div class="dcard red-border"><h2>🚨 2025年减配维权事件（问政四川8条投诉）</h2><table><tr><th>类别</th><th style="color:#38a169">宣传承诺</th><th style="color:#e53e3e">实际交付</th></tr><tr><td>🌳 花园绿岛</td><td>6园+漫步道+会客座椅</td><td style="color:#e53e3e">无漫步道、无座椅</td></tr><tr><td>🌺 太太花房</td><td>景墙+连廊+吧台</td><td style="color:#e53e3e">均未修建</td></tr><tr><td>⛲ 入口水景</td><td>双层喷泉</td><td style="color:#e53e3e">仅1层</td></tr><tr><td>🏛️ 归家水景</td><td>4阶L型+地面喷泉</td><td style="color:#e53e3e">仅2阶</td></tr><tr><td>🏢 架空层</td><td>"精装"（核心卖点）</td><td style="color:#e53e3e">简装甚至毛坯</td></tr><tr><td>🔒 围墙</td><td>完善安防</td><td style="color:#e53e3e">仅红外、无电网</td></tr></table><div class="callout callout-red">🚨 开发商回应："项目过程图不是最后出街图"——拒绝承认宣传承诺。</div></div>
+    <div class="dcard"><h2>🔍 环境硬伤评估</h2><table><tr><th>🏭 玻璃厂</th><td style="color:#38a169">距南玻>3km，基本无影响 ✅</td></tr><tr><th>⚡ 变电站</th><td style="color:#38a169">华府大道四段较远 ✅</td></tr><tr><th>🚰 排污</th><td style="color:#38a169">怡心湖核心区，与污水处理设施有隔离 ✅</td></tr></table><div class="callout callout-green">✅ 三个盘中<strong>环境硬伤最低</strong>。真正风险在品质兑现。</div></div>
+    <div class="dcard green-border"><h2>✅ 核心优势</h2><table><tr><td>🌊</td><td>一线临湖位置最佳，离怡心湖最近</td></tr><tr><td>🏢</td><td>越秀千亿国企，品牌强于民企</td></tr><tr><td>📐</td><td>「三厅主义」户型，设计领先</td></tr><tr><td>🏆</td><td>克而瑞竞品组第一（11盘中7.96分）</td></tr><tr><td>🔑</td><td>下个月交房，等待期最短</td></tr></table></div>
+    <div class="verdict-box"><h2>🎯 综合判断</h2><p>适合：<span class="verdict-tag vt-green">追求一线湖景</span> <span class="verdict-tag vt-green">急需入住</span> <span class="verdict-tag vt-green">信任越秀品牌</span></p><p style="margin-top:8px">不适合：<span class="verdict-tag vt-red">对减配零容忍</span> <span class="verdict-tag vt-red">预算紧张</span></p><p style="margin-top:10px;font-size:12px;opacity:.7">⚠️ 建议等7月交付实景出来后再去看，不要交付前盲买。</p></div>
+  </div>
+</div>
+
+<!-- ========== DETAIL: 万科公园传奇 ========== -->
+<div class="page" id="page-wanke">
+  <div class="detail-hero dh-black">
+    <h1>🏗️ 万科公园传奇</h1>
+    <div class="dh-sub">成都 · 天府新区 · 麓湖板块<br>📍 梓州大道南一段（红石公园旁）</div>
+    <div class="dh-tags"><span class="dht">🏢 万科集团</span><span class="dht">📐 165㎡</span><span class="dht">💰 310-520万</span><span class="dht">🔑 已交付现房</span></div>
+  </div>
+  <div class="detail-body">
+
+    <div class="dcard black-border">
+      <h2>🚨🚨🚨 四个盘中风险最高的楼盘</h2>
+      <p style="font-size:13px;line-height:1.8">司法鉴定已确认：楼板混凝土强度仅<strong style="color:#e53e3e">C20甚至C11.8</strong>（设计要求C30），楼板贯穿性开裂最宽达<strong style="color:#e53e3e">3mm</strong>，已<strong style="color:#e53e3e">失去应有的承载能力</strong>。这已经不是"品质差"的问题，而是<strong style="color:#e53e3e">涉及居住安全的结构缺陷</strong>。叠加产权证违约、配套极度匮乏，强烈建议慎重考虑。</p>
+    </div>
+
+    <div class="dcard"><h2>📋 楼盘速览</h2><table><tr><th>位置</th><td>天府新区梓州大道南一段（红石公园旁，麓湖公园区）</td></tr><tr><th>开发商</th><td>万科集团（成都中万锦天置业）</td></tr><tr><th>物业</th><td>万科物业 | 3.5元/㎡/月</td></tr><tr><th>容积率</th><td><strong>3.0</strong>（中高密度）/ 绿化率 30%</td></tr><tr><th>总户数</th><td>约<strong>994户</strong> / 约28栋（高层/超高层，最高40层）</td></tr><tr><th>梯户比</th><td>2梯3户（165㎡为边户，132㎡为中户）</td></tr><tr><th>装修</th><td>精装交付（宣传4300-4980元/㎡），中央空调+新风+地暖</td></tr><tr><th>交付</th><td>一期2020年 / 二期约2022年（<strong>已交付现房</strong>）</td></tr></table></div>
+
+    <div class="dcard green-border"><h2>🏠 165㎡ 主力户型详解</h2><table><tr><th>格局</th><td><strong>四室两厅两卫</strong>，大四房方正布局</td></tr><tr><th>客厅</th><td><strong>横厅设计</strong>，连通宽景大阳台，南北通透</td></tr><tr><th>主卧</th><td><strong>套房式</strong>：独立卫生间 + 衣帽间（双一字型布局）</td></tr><tr><th>阳台</th><td>横向贯穿阳台，连通客厅和部分卧室</td></tr><tr><th>黄金边户</th><td>2梯3户中<strong>165㎡为边户</strong>，采光优于中间132㎡</td></tr></table><div class="divider"></div><h3>💰 165㎡ 价格分析</h3><table><tr><th>新房尾盘指导价</th><td>约 23,000元/㎡，总价约 <strong>380万</strong></td></tr><tr><th>二手房挂牌价</th><td>约 19,000~27,000元/㎡，总价 <strong>320-520万</strong></td></tr><tr><th>实际成交（2025.11）</th><td style="color:#e53e3e;font-weight:700">高楼层166㎡成交约 <strong>310万</strong>，单价约 <strong>1.84万/㎡</strong></td></tr><tr><th>法拍成交（2022.08）</th><td>29楼165㎡成交 <strong>471万</strong>，单价约 2.84万/㎡</td></tr></table><div class="callout callout-red">📉 从2.84万→1.84万，跌幅约<strong>35%</strong>。挂牌价与成交价差距大，有价无市。</div></div>
+
+    <div class="dcard red-border"><h2>🔴🔴🔴 致命风险：结构安全（司法鉴定确认）</h2><table><tr><th style="color:#e53e3e">问题</th><th style="color:#e53e3e">实测数据</th><th style="color:#38a169">设计要求</th></tr><tr><td>楼板混凝土强度</td><td style="color:#e53e3e">推定值 <strong>C20</strong>，部分仅 <strong>C11.8</strong></td><td style="color:#38a169">C30</td></tr><tr><td>钢筋保护层</td><td style="color:#e53e3e">98点中33点合格，<strong>合格率33.67%</strong></td><td style="color:#38a169">100%</td></tr><tr><td>裂缝宽度</td><td style="color:#e53e3e">0.46~1.61mm，最宽达<strong>3mm</strong></td><td style="color:#38a169">&lt;0.3mm</td></tr><tr><td>裂缝级别</td><td style="color:#e53e3e"><strong>Cu严重级别</strong>（>0.5mm影响承载力）</td><td style="color:#38a169">无裂缝</td></tr></table><div class="callout callout-red">🚨 <strong>司法鉴定结论</strong>：楼板<strong>已失去应有的承载能力</strong>。每间房均出现贯穿性开裂，属系统性结构问题。</div></div>
+
+    <div class="dcard red-border"><h2>🔴 其他质量/交付问题</h2><table><tr><th>🏚️ 精装缩水</th><td>宣传4300-4980元/㎡，实际严重不匹配。万科称"装修价格与实际装修无关"</td></tr><tr><th>📜 产权证违约</th><td>二期交房超2年仍未办理<strong>大产权</strong>，已实质性违约</td></tr><tr><th>💧 地库渗水</th><td>麓湖公园区多盘共性，万科公园传奇同样存在</td></tr><tr><th>🚗 车位违规</th><td>开发商在停车位放储物柜，消防安全隐患</td></tr><tr><th>🎪 沙盘不符</th><td>儿童游乐区、保安亭等与宣传严重不符</td></tr></table></div>
+
+    <div class="dcard orange-border"><h2>⚠️ 居住配套硬伤</h2><table><tr><th>🚧 汉州路断头路</th><td>交房3-4年仍未修通，社区巴士无法触达</td></tr><tr><th>🚇 地铁实际距离</th><td>直线900m但<strong>实际步行约2km</strong>，基本和地铁沾不上边</td></tr><tr><th>🚗 梓州大道拥堵</th><td>早晚高峰期非常堵，主要依赖自驾</td></tr><tr><th>🥬 无农贸市场</th><td>附近很大区域<strong>没有规划农贸菜市场</strong></td></tr><tr><th>🛒 商业配套匮乏</th><td>大型商业需到<strong>3km外万达</strong></td></tr><tr><th>🏥 医疗距离远</th><td>最近医院为<strong>4km外</strong>省医院天府新区医院</td></tr></table></div>
+
+    <div class="dcard"><h2>🔍 环境硬伤评估</h2><table><tr><th>🚰 排污</th><td style="color:#38a169">麓湖高端规划区，无紧邻污水处理厂 ✅</td></tr><tr><th>🗑️ 环卫</th><td style="color:#d69e2e">2026年初投诉：周边公共绿地垃圾堆积 ⚠️</td></tr><tr><th>🌾 农业</th><td style="color:#d69e2e">周边大量待改造土地，3-5年处于开发中 ⚠️</td></tr><tr><th>⚡ 变电站</th><td style="color:#d69e2e">武汉路+蜀州路交汇有220kV变电站规划争议 ⚠️</td></tr><tr><th>🏭 工业污染</th><td style="color:#38a169">麓湖无大型工厂，无工业污染源 ✅</td></tr></table></div>
+
+    <div class="dcard green-border"><h2>✅ 核心优势</h2><table><tr><td>🌳</td><td>麓湖板块核心地段，紧邻红石公园</td></tr><tr><td>🏫</td><td>天府C学区（天府七中/七小/八小/泡桐树小学）</td></tr><tr><td>📐</td><td>165㎡户型设计好：横厅+大阳台+套房主卧</td></tr><tr><td>💰</td><td>价格从高点跌35%，绝对价格在麓湖板块有吸引力</td></tr><tr><td>🔑</td><td>即买即住现房，无需等期房</td></tr></table></div>
+
+    <div class="dcard blue-border"><h2>📋 实地看房必做清单</h2><ul class="checklist"><li><strong>⚠️ 逐间检查天花板裂缝</strong>——看修补痕迹、重新刷白痕迹</li><li><strong>⚠️ 问清楚大产权是否已下</strong>——二期特别注意</li><li><strong>⚠️ 带验房师做结构检测</strong>——混凝土回弹+钢筋扫描不可省</li><li>去地下车库看渗水（尤其雨后）</li><li>实测小区步行到红石公园地铁站的实际时间</li><li>开车走梓州大道早晚高峰感受通勤</li><li>去问政四川搜索"万科公园传奇"看最新投诉</li><li>确认165㎡边户是否临梓州大道（噪音问题）</li></ul></div>
+
+    <div class="verdict-box"><h2>🎯 综合研判：四盘中风险最高</h2><p style="color:#fc8181"><strong>⚠️ 如果一定要买，必须同时满足：</strong><span class="verdict-tag vt-yellow">大产权已下</span> <span class="verdict-tag vt-yellow">结构检测合格</span> <span class="verdict-tag vt-yellow">能接受自驾</span> <span class="verdict-tag vt-yellow">接受配套等待</span></p><p style="margin-top:10px"><strong>绝对不适合：</strong><span class="verdict-tag vt-red">对安全零容忍</span> <span class="verdict-tag vt-red">依赖地铁</span> <span class="verdict-tag vt-red">自住刚需</span></p><p style="margin-top:10px;font-size:12px;opacity:.75">🚨 前三盘是"住得舒不舒服"的问题，这个是<strong>"住得安不安全"</strong>的问题——本质区别。</p></div>
+  </div>
+</div>
+
+</div><!-- /#app -->
+
+<script>
+let currentPage = 'home';
+
+function showDetail(slug) {
+  currentPage = slug;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const detailPage = document.getElementById('page-' + slug);
+  if (detailPage) detailPage.classList.add('active');
+
+  const titles = {jiahe:'嘉禾朗宸府',yihu:'怡湖春晓',yuexiu:'越秀湖与白',wanke:'万科公园传奇'};
+  const subs = {jiahe:'温家山路208号',yihu:'双塘社区·怡心湖C区',yuexiu:'华府大道四段1027号',wanke:'梓州大道南一段·麓湖'};
+  document.getElementById('navTitle').textContent = titles[slug] || '';
+  document.getElementById('navSub').textContent = subs[slug] || '';
+  document.getElementById('backBtn').style.display = 'flex';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function goHome() {
+  currentPage = 'home';
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-home').classList.add('active');
+  document.getElementById('navTitle').textContent = '成都楼盘分析';
+  document.getElementById('navSub').textContent = '怡心湖 · 麓湖';
+  document.getElementById('backBtn').style.display = 'none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+document.getElementById('backBtn').style.display = 'none';
+
+window.addEventListener('popstate', function(e) {
+  if (e.state && e.state.page) {
+    if (e.state.page === 'home') goHome();
+    else showDetail(e.state.page);
+  } else { goHome(); }
+});
+
+const origShowDetail = showDetail;
+showDetail = function(slug) {
+  history.pushState({page:slug}, '', '#/' + slug);
+  origShowDetail(slug);
+};
+const origGoHome = goHome;
+goHome = function() {
+  history.pushState({page:'home'}, '', '#/');
+  origGoHome();
+};
+
+(function(){
+  const hash = window.location.hash;
+  if (hash.startsWith('#/')) {
+    const slug = hash.slice(2);
+    if (['jiahe','yihu','yuexiu','wanke'].includes(slug)) {
+      showDetail(slug); return;
+    }
+  }
+  history.replaceState({page:'home'}, '', '#/');
+})();
+</script>
+
+</body>
+</html>
