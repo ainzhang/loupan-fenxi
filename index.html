@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>成都·怡心湖&麓湖楼盘分析报告</title>
+<title>成都楼盘深度分析报告（五盘）</title>
 <style>
 *,::before,::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -131,7 +131,7 @@ tr:last-child td{border-bottom:none}
   .prop-card .card-arrow{font-size:22px}
   .hero-home{padding:40px 24px 32px}
   .hero-home h1{font-size:24px}
-  .compare-row{margin:8px 20px 16px;gap:8px;grid-template-columns:repeat(4,1fr)}
+  .compare-row{margin:8px 20px 16px;gap:8px;grid-template-columns:repeat(5,1fr)}
   .compare-cell{padding:14px 10px}
   .compare-cell .cc-name{font-size:13px}
   .compare-cell .cc-price{font-size:14px}
@@ -153,8 +153,8 @@ tr:last-child td{border-bottom:none}
 <nav class="navbar" id="navbar">
   <button class="back-btn" id="backBtn" onclick="goHome()" aria-label="返回">←</button>
   <div>
-    <div class="nav-title" id="navTitle">成都楼盘分析</div>
-    <div class="nav-sub" id="navSub">怡心湖 · 麓湖</div>
+    <div class="nav-title" id="navTitle">成都楼盘分析（五盘）</div>
+    <div class="nav-sub" id="navSub">怡心湖 · 麓湖 · 新川南</div>
   </div>
 </nav>
 
@@ -162,8 +162,8 @@ tr:last-child td{border-bottom:none}
 <div class="page active" id="page-home">
 
   <div class="hero-home">
-    <h1>🏠 成都·怡心湖&麓湖 楼盘分析</h1>
-    <p>嘉禾朗宸府 · 怡湖春晓 · 越秀湖与白 · 万科公园传奇<br>四盘深度对比分析报告</p>
+    <h1>🏠 成都楼盘深度分析（五盘）</h1>
+    <p>嘉禾朗宸府 · 怡湖春晓 · 越秀湖与白 · 万科公园传奇 · 中交天府九章<br>全维度对比分析报告</p>
     <div class="tag-row">
       <span class="htag">🔍 环境硬伤</span>
       <span class="htag">📐 户型详解</span>
@@ -194,6 +194,11 @@ tr:last-child td{border-bottom:none}
       <div class="cc-name">🏗️ 万科公园传奇</div>
       <div class="cc-price">310-520万</div>
       <span class="cc-tag badge-black">165㎡二手</span>
+    </div>
+    <div class="compare-cell">
+      <div class="cc-name">🏗️ 中交天府九章</div>
+      <div class="cc-price">310-435万</div>
+      <span class="cc-tag badge-green">143㎡精装</span>
     </div>
   </div>
 
@@ -244,6 +249,18 @@ tr:last-child td{border-bottom:none}
       <span>📐 165㎡</span><span>💰 310-520万</span><span>🌳 麓湖·已交付</span>
     </div>
     <div class="card-desc">万科集团+麓湖板块+天府C学区+红石公园。但司法鉴定确认楼板混凝土强度严重不达标（C11.8 vs 要求C30），楼板开裂最宽3mm，已失去承载能力。涉及结构安全！</div>
+    <div class="card-arrow">›</div>
+  </div>
+
+  <div class="prop-card" onclick="showDetail('zhongjiao')" style="border:1px solid #c6f6d5">
+    <div class="card-top">
+      <div class="card-name">🏗️ 中交天府九章</div>
+      <span class="card-badge badge-green">✅ 综合最优</span>
+    </div>
+    <div class="card-meta">
+      <span>📐 143㎡</span><span>💰 310-435万</span><span>🌳 新川之心</span>
+    </div>
+    <div class="card-desc">央企中交+下月交付+143㎡方厅"卷王"户型（6.8×6.15m）+新川科技园产业支撑。五盘中综合风险最低、最均衡的选择。无工业污染/无结构缺陷/无减配维权记录。</div>
     <div class="card-arrow">›</div>
   </div>
 
@@ -341,6 +358,39 @@ tr:last-child td{border-bottom:none}
 
 </div><!-- /#app -->
 
+<!-- ========== DETAIL: 中交天府九章 ========== -->
+<div class="page" id="page-zhongjiao">
+  <div class="detail-hero dh-green">
+    <h1>🏗️ 中交天府九章</h1>
+    <div class="dh-sub">成都 · 高新区 · 新川南<br>📍 新程大道/和景一街360号</div>
+    <div class="dh-tags"><span class="dht">🏢 中交央企</span><span class="dht">📐 143㎡方厅</span><span class="dht">💰 310-435万</span><span class="dht">🔑 下月交房</span></div>
+  </div>
+  <div class="detail-body">
+
+    <div class="dcard green-border">
+      <h2>🔑 五盘中综合风险最低</h2>
+      <p style="font-size:13px;line-height:1.8">央企中交+准现房（下月交付）+ 143㎡方厅户型成都同面积段"卷王"+ 新川科技园产业支撑 + 新川之心公园一路之隔。无工业污染、无结构缺陷、无减配维权记录。目前分析过的楼盘中<strong style="color:#38a169">最均衡、最稳妥的选择</strong>。</p>
+    </div>
+
+    <div class="dcard"><h2>📋 楼盘速览</h2><table><tr><th>位置</th><td>高新区新程大道/和景一街360号（新川创新科技园南侧）</td></tr><tr><th>开发商</th><td><strong>中交地产</strong>（央企，世界500强第63位）</td></tr><tr><th>容积率</th><td><strong>2.0</strong> / 绿化率 35%</td></tr><tr><th>总户数</th><td><strong>580户</strong> / 18栋（14栋小高层+4栋洋房）</td></tr><tr><th>梯户比</th><td><strong>2T2/1T2</strong> 纯板式</td></tr><tr><th>装修</th><td>精装（日立中央空调+兰舍新风+博世地暖）</td></tr><tr><th>物业</th><td>中交物业 | 3.6元/㎡/月</td></tr><tr><th>交付</th><td><strong style="color:#38a169">2026年7月30日（下个月！）</strong></td></tr></table></div>
+
+    <div class="dcard green-border">
+      <h2>🏠 143㎡ C1「寻隐」户型详解</h2>
+      <table><tr><th>格局</th><td><strong>4室2厅2卫</strong>（可改双套房3卫）</td></tr><tr><th>方厅</th><td>开间<strong>6.8m</strong> × 进深<strong>6.15m</strong>，超50㎡ LDKG一体化（160㎡+才有的尺度）</td></tr><tr><th>阳台</th><td><strong>6.8m IMAX宽幕阳台</strong></td></tr><tr><th>入户光厅</th><td>2T2独立私享约<strong>11㎡光厅</strong></td></tr><tr><th>主卧</th><td>套房约<strong>27.6㎡</strong>，开间3.6m，独立衣帽间+主卫</td></tr><tr><th>南向次卧</th><td>面宽3.2m + X空间，可改造为次卧套房</td></tr><tr><th>得房率</th><td>宣传97-101%（含赠送），套内实得约117㎡</td></tr></table>
+      <div class="callout callout-info">🖼️ 户型图查看：微信公众号搜索"已取证！精装2.3万/㎡起，城南软件园再现卷王爆款户型"（含样板间实拍）；酷家乐搜索"中交天府九章143"</div>
+      <h3>💰 价格</h3><table><tr><th>早期优惠（2025初）</th><td>总价约 <strong>310-340万</strong></td></tr><tr><th>当前备案价（2026.03）</th><td>约 <strong>30,441元/㎡</strong></td></tr><tr><th>143㎡估算总价</th><td style="color:#e53e3e;font-weight:700;font-size:16px">约 <strong>310-435万</strong></td></tr></table>
+    </div>
+
+    <div class="dcard orange-border"><h2>🔍 环境硬伤评估</h2><table><tr><th>🚰 排污</th><td style="color:#38a169">新川科技园新建区，无紧邻污水厂 ✅</td></tr><tr><th>🗑️ 环卫</th><td style="color:#38a169">未发现紧邻垃圾中转站 ✅</td></tr><tr><th>🌾 农业</th><td style="color:#38a169">整体规划为科技园+住宅，无农业风险 ✅</td></tr><tr><th>⚡ 变电站</th><td style="color:#d69e2e">新川板块锦和路西侧变电站争议（2026），距天府九章有一定距离 ⚠️</td></tr><tr><th>🏭 工业</th><td style="color:#38a169">科技研发/软件/AI产业为主，无重工业/化工厂/玻璃厂 ✅</td></tr></table></div>
+
+    <div class="dcard green-border"><h2>✅ 核心优势</h2><table><tr><td>🏢</td><td>中交央企，世界500强第63位</td></tr><tr><td>📐</td><td>143㎡方厅成都同面积"卷王"级</td></tr><tr><td>🌳</td><td>新川之心公园（240亩）一路之隔</td></tr><tr><td>🏙️</td><td>新川科技园产业人口支撑</td></tr><tr><td>🔑</td><td>下个月交房，等待期仅一个多月</td></tr><tr><td>🔇</td><td>未搜到质量维权记录</td></tr></table></div>
+
+    <div class="dcard orange-border"><h2>⚠️ 需关注的风险</h2><table><tr><th>⚡</th><td>新川板块变电站规划争议（锦和路西侧）</td></tr><tr><th>🏪</th><td>新川南大型商业配套仍在建设中</td></tr><tr><th>🚇</th><td>地铁875m，步行10-12分钟</td></tr><tr><th>💰</th><td>不同批次价格差异大（2.3-3.0万/㎡）</td></tr></table></div>
+
+    <div class="verdict-box"><h2>🎯 五盘中综合风险最低</h2><p>适合：<span class="verdict-tag vt-green">预算310-430万</span> <span class="verdict-tag vt-green">看重央企</span> <span class="verdict-tag vt-green">重视户型</span> <span class="verdict-tag vt-green">软件园通勤</span></p><p style="margin-top:8px">不适合：<span class="verdict-tag vt-red">对变电站零容忍</span> <span class="verdict-tag vt-red">需地铁3分钟内</span></p><p style="margin-top:10px;font-size:12px;opacity:.7">🔑 没有工业污染/没有结构缺陷/没有减配维权——五盘中<strong>最均衡稳妥</strong>的选择。</p></div>
+  </div>
+</div>
+
 <script>
 let currentPage = 'home';
 
@@ -350,8 +400,8 @@ function showDetail(slug) {
   const detailPage = document.getElementById('page-' + slug);
   if (detailPage) detailPage.classList.add('active');
 
-  const titles = {jiahe:'嘉禾朗宸府',yihu:'怡湖春晓',yuexiu:'越秀湖与白',wanke:'万科公园传奇'};
-  const subs = {jiahe:'温家山路208号',yihu:'双塘社区·怡心湖C区',yuexiu:'华府大道四段1027号',wanke:'梓州大道南一段·麓湖'};
+  const titles = {jiahe:'嘉禾朗宸府',yihu:'怡湖春晓',yuexiu:'越秀湖与白',wanke:'万科公园传奇',zhongjiao:'中交天府九章'};
+  const subs = {jiahe:'温家山路208号',yihu:'双塘社区·怡心湖C区',yuexiu:'华府大道四段1027号',wanke:'梓州大道南一段·麓湖',zhongjiao:'新程大道·新川南'};
   document.getElementById('navTitle').textContent = titles[slug] || '';
   document.getElementById('navSub').textContent = subs[slug] || '';
   document.getElementById('backBtn').style.display = 'flex';
@@ -362,8 +412,8 @@ function goHome() {
   currentPage = 'home';
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-home').classList.add('active');
-  document.getElementById('navTitle').textContent = '成都楼盘分析';
-  document.getElementById('navSub').textContent = '怡心湖 · 麓湖';
+  document.getElementById('navTitle').textContent = '成都楼盘分析（五盘）';
+  document.getElementById('navSub').textContent = '怡心湖 · 麓湖 · 新川南';
   document.getElementById('backBtn').style.display = 'none';
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -392,7 +442,7 @@ goHome = function() {
   const hash = window.location.hash;
   if (hash.startsWith('#/')) {
     const slug = hash.slice(2);
-    if (['jiahe','yihu','yuexiu','wanke'].includes(slug)) {
+    if (['jiahe','yihu','yuexiu','wanke','zhongjiao'].includes(slug)) {
       showDetail(slug); return;
     }
   }
