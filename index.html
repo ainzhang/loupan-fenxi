@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>成都楼盘深度分析报告（五盘）</title>
+<title>成都楼盘深度分析报告（六盘）</title>
 <style>
 *,::before,::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -51,7 +51,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:
 .prop-card .card-arrow{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:18px;color:#ccc;transition:color .15s}
 .prop-card:hover .card-arrow{color:var(--blue)}
 
-.compare-row{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:6px 12px 14px}
+.compare-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:6px 12px 14px}
 .compare-cell{background:var(--card);border-radius:10px;padding:10px 8px;text-align:center;box-shadow:var(--shadow)}
 .compare-cell .cc-name{font-size:11px;font-weight:600;color:#1a202c;margin-bottom:2px}
 .compare-cell .cc-price{font-size:12px;font-weight:700;color:var(--red)}
@@ -134,7 +134,7 @@ tr:last-child td{border-bottom:none}
   .prop-card .card-arrow{font-size:22px}
   .hero-home{padding:40px 24px 32px}
   .hero-home h1{font-size:24px}
-  .compare-row{margin:8px 20px 16px;gap:8px;grid-template-columns:repeat(5,1fr)}
+  .compare-row{margin:8px 20px 16px;gap:8px;grid-template-columns:repeat(6,1fr)}
   .compare-cell{padding:14px 10px}
   .compare-cell .cc-name{font-size:13px}
   .compare-cell .cc-price{font-size:14px}
@@ -156,8 +156,8 @@ tr:last-child td{border-bottom:none}
 <nav class="navbar" id="navbar">
   <button class="back-btn" id="backBtn" onclick="goHome()" aria-label="返回">←</button>
   <div>
-    <div class="nav-title" id="navTitle">成都楼盘分析（五盘）</div>
-    <div class="nav-sub" id="navSub">怡心湖 · 麓湖 · 新川南</div>
+    <div class="nav-title" id="navTitle">成都楼盘分析（六盘）</div>
+    <div class="nav-sub" id="navSub">怡心湖 · 麓湖 · 新川南 · 崔家店</div>
   </div>
 </nav>
 
@@ -165,8 +165,8 @@ tr:last-child td{border-bottom:none}
 <div class="page active" id="page-home">
 
   <div class="hero-home">
-    <h1>🏠 成都楼盘深度分析（五盘）</h1>
-    <p>嘉禾朗宸府 · 怡湖春晓 · 越秀湖与白 · 万科公园传奇 · 中交天府九章<br>全维度对比分析报告</p>
+    <h1>🏠 成都楼盘深度分析（六盘）</h1>
+    <p>嘉禾朗宸府 · 怡湖春晓 · 越秀湖与白 · 万科公园传奇 · 中交天府九章 · 越秀天悦云萃<br>全维度对比分析报告</p>
     <div class="tag-row">
       <span class="htag">🔍 环境硬伤</span>
       <span class="htag">📐 户型详解</span>
@@ -202,6 +202,11 @@ tr:last-child td{border-bottom:none}
       <div class="cc-name">🏗️ 中交天府九章</div>
       <div class="cc-price">310-435万</div>
       <span class="cc-tag badge-green">143㎡精装</span>
+    </div>
+    <div class="compare-cell">
+      <div class="cc-name">🏙️ 越秀天悦云萃</div>
+      <div class="cc-price">370-510万</div>
+      <span class="cc-tag badge-orange">139㎡五房</span>
     </div>
   </div>
 
@@ -264,6 +269,18 @@ tr:last-child td{border-bottom:none}
       <span>📐 143㎡</span><span>💰 310-435万</span><span>🌳 新川之心</span>
     </div>
     <div class="card-desc">央企中交+下月交付+143㎡方厅"卷王"户型（6.8×6.15m）+新川科技园产业支撑。五盘中综合风险最低、最均衡的选择。无工业污染/无结构缺陷/无减配维权记录。</div>
+    <div class="card-arrow">›</div>
+  </div>
+
+  <div class="prop-card" onclick="showDetail('yunxiu')" style="border:1px solid #fbd38d">
+    <div class="card-top">
+      <div class="card-name">🏙️ 越秀天悦云萃·三期</div>
+      <span class="card-badge badge-orange">⚠️ 减配维权史</span>
+    </div>
+    <div class="card-meta">
+      <span>📐 139㎡</span><span>💰 370-510万</span><span>🏙️ 成华2.5环</span>
+    </div>
+    <div class="card-desc">越秀主城改善盘，139㎡得房率121%做五房+空中庭院，产品力极强。但一期/二期爆发大规模减配维权（问政四川10+条），示范区与交付差距大，市场监管局对二期围墙问题不予立案。三期能否改过存疑。</div>
     <div class="card-arrow">›</div>
   </div>
 
@@ -361,6 +378,36 @@ tr:last-child td{border-bottom:none}
 
 </div><!-- /#app -->
 
+<!-- ========== DETAIL: 越秀天悦云萃三期 ========== -->
+<div class="page" id="page-yunxiu">
+  <div class="detail-hero dh-red" style="background:linear-gradient(135deg,#5c3a1a,#8b5a2b,#b87333)">
+    <h1>🏙️ 越秀天悦云萃·三期</h1>
+    <div class="dh-sub">成都 · 成华区 · 崔家店/万年场 · 主城2.5环<br>📍 和顺路1号（和泰东一路99号）</div>
+    <div class="dh-tags"><span class="dht">🏢 越秀地产</span><span class="dht">📐 139㎡五房</span><span class="dht">💰 370-510万</span><span class="dht">🏙️ 主城2.5环</span></div>
+  </div>
+  <div class="detail-body">
+
+    <div class="dcard red-border">
+      <h2>🚨 核心风险：越秀"交付魔咒"——一期二期已翻车</h2>
+      <p style="font-size:13px;line-height:1.8">越秀在成都已有<strong style="color:#e53e3e">至少两个盘爆发减配维权</strong>（湖与白 + 天悦云萃一期/二期）。天悦云萃一期：绿化缩水、装修粗劣、强行提前交付；二期：围墙大幅减配，市场监管局<strong style="color:#e53e3e">不予立案</strong>。三期是否重蹈覆辙？这是购买前必须面对的核心问题。</p>
+    </div>
+
+    <div class="dcard"><h2>📋 楼盘速览</h2><table><tr><th>位置</th><td>成华区万年场街道和顺路1号（崔家店板块，<strong>主城2.5环</strong>）</td></tr><tr><th>开发商</th><td>越秀地产（成都隽城/成都樾穗）</td></tr><tr><th>容积率</th><td><strong>2.0</strong>（体感仅1.56）/ 绿化率 35%</td></tr><tr><th>总户数</th><td><strong>624-647户</strong> / 16栋（3栋17F小高层+13栋8-11F洋房）</td></tr><tr><th>梯户比</th><td>T2纯板式</td></tr><tr><th>装修</th><td><strong>精装交付</strong></td></tr><tr><th>物业</th><td>越秀物业 | 3.8元/㎡/月</td></tr><tr><th>交付</th><td><strong style="color:#e53e3e">2027年底-2028年6月</strong>（等待2-3年）</td></tr></table></div>
+
+    <div class="dcard green-border"><h2>🏠 139㎡ 主力户型详解（注：该盘无143㎡）</h2><table><tr><th>格局</th><td><strong>四室三厅三卫</strong>，可改<strong>五房三卫</strong></td></tr><tr><th>得房率</th><td style="color:#38a169;font-weight:700">约 <strong>121%</strong>（新规2.0，实得约168㎡）</td></tr><tr><th>空中庭院</th><td>约<strong>8㎡空中庭院</strong>，客厅与主卧可联动庭院，可推拉门窗系统</td></tr><tr><th>主卧</th><td>套房约<strong>32㎡</strong>，四分离卫生间+双台盆+独立衣帽间</td></tr><tr><th>客厅</th><td>"向日葵客厅"，全景落地窗，南北通透</td></tr><tr><th>厨房</th><td>独立岛台+双回游动线</td></tr><tr><th>入户</th><td>独立入户光厅</td></tr><tr><th>总价</th><td style="color:#e53e3e;font-weight:700;font-size:16px">约 <strong>510万起</strong>（精装约3.1-3.3万/㎡）</td></tr></table><div class="callout callout-info">户型图查看：什么值得买搜索"越秀天悦云萃3期139平做5房"（含详细户型图解析）</div></div>
+
+    <div class="dcard red-border"><h2>🔴 一期/二期减配维权详情</h2><h3>一期（2025年9-12月）</h3><table><tr><th>绿化</th><td>严重缩水，与沙盘和宣传差距大</td></tr><tr><th>公共设施</th><td>架空层、围栏、座椅简陋</td></tr><tr><th>装修质量</th><td>柜门关不严（缝隙近1公分）、木饰墙板脱落、感应灯常亮不灭</td></tr><tr><th>交付方式</th><td>强行提前交付，欺骗诱导业主收房</td></tr></table><h3>二期（2026年1月）</h3><table><tr><th>围墙</th><td>大门示范区用料好，其余围墙全部用围挡遮住，实际交付"与安置房水平相当"</td></tr><tr><th>维权结果</th><td style="color:#e53e3e"><strong>市场监管局不予立案</strong></td></tr></table><div class="callout callout-red">🚨 关键问题：<strong>三期会改进还是继续走老路？</strong>越秀在成都已形成"湖与白+天悦云萃"双盘减配模式，不可轻视。</div></div>
+
+    <div class="dcard orange-border"><h2>🔍 环境硬伤评估</h2><table><tr><th>⚡ 变电站/高压线</th><td style="color:#d69e2e">崔家店/万年场区域高压线密集，华润凌云府等周边盘均有标注（风险指数4-6），多盘不利因素公示含变电站 ⚠️</td></tr><tr><th>🏭 历史工业用地</th><td style="color:#d69e2e">片区原为钢管厂工业用地，现城市更新中。誉浪东望旁有电力送变电公司旧改地块拆迁搁置 ⚠️</td></tr><tr><th>🗑️ 垃圾设施</th><td style="color:#d69e2e">区域1000米内普遍标注垃圾填埋场/焚烧发电厂（大气/水污染风险）⚠️</td></tr><tr><th>🚰 排污</th><td style="color:#d69e2e">主城区排污管网成熟，无特殊风险</td></tr><tr><th>🌾 农业</th><td style="color:#38a169">主城2.5环，无农业风险 ✅</td></tr></table></div>
+
+    <div class="dcard green-border"><h2>✅ 核心优势</h2><table><tr><td>🏙️</td><td><strong>主城2.5环</strong>——成华区核心地段，万象城+杉板桥双商圈</td></tr><tr><td>🚇</td><td><strong>7号线双店路站 ~200-600m</strong>——真正的步行地铁盘</td></tr><tr><td>📐</td><td><strong>139㎡得房率121%做五房</strong>——空中庭院+双回游动线，产品力极强</td></tr><tr><td>🏗️</td><td><strong>2.0容积率+8-11F真洋房</strong>——主城低密稀缺</td></tr><tr><td>🌳</td><td><strong>外挂1.1万㎡公园</strong>——开发商代建，业主可享约3.6万㎡景观</td></tr><tr><td>🏊</td><td><strong>超3000㎡会所</strong>——恒温泳池、书吧、健身房、儿童空间</td></tr></table></div>
+
+    <div class="dcard orange-border"><h2>⚠️ 需关注的风险</h2><table><tr><th>🚨 减配历史</th><td>一期/二期大规模维权，市场监管局对二期不予立案——三期品质兑现存重大不确定性</td></tr><tr><th>🏗️ 城市界面</th><td>崔家店板块处于更新过渡期，周边老旧社区+工业遗存，界面提升需时间</td></tr><tr><th>⏳ 交房极晚</th><td>2027底-2028年6月，等待2-3年，持有成本和不确定性高</td></tr><tr><th>💰 溢价较高</th><td>3.1-3.3万/㎡，比周边新房贵约2,672元/㎡，比二手贵约17,606元/㎡</td></tr><tr><th>⚡ 区域变电站</th><td>万年场街道全域高压线/变电站密集</td></tr></table></div>
+
+    <div class="verdict-box"><h2>🎯 综合研判：产品力与品牌信用的拉锯战</h2><p>适合：<span class="verdict-tag vt-green">预算500万+</span> <span class="verdict-tag vt-green">看重主城地段</span> <span class="verdict-tag vt-green">追求户型极致</span> <span class="verdict-tag vt-green">不急入住</span></p><p style="margin-top:8px">不适合：<span class="verdict-tag vt-red">对减配风险零容忍</span> <span class="verdict-tag vt-red">急需入住</span> <span class="verdict-tag vt-red">预算敏感</span> <span class="verdict-tag vt-red">不信任越秀品牌</span></p><p style="margin-top:10px;font-size:12px;opacity:.75">🚨 139㎡户型产品力确实强，但越秀在成都的"减配双盘"履历（湖与白+天悦云萃一期/二期）让人无法忽视。如果决定入手，<strong>必须在合同中逐项锁定精装标准、公区配置、围墙材质</strong>，不要相信任何口头承诺或示范区效果图。</p></div>
+  </div>
+</div>
+
 <!-- ========== DETAIL: 中交天府九章 ========== -->
 <div class="page" id="page-zhongjiao">
   <div class="detail-hero dh-green">
@@ -403,8 +450,8 @@ function showDetail(slug) {
   const detailPage = document.getElementById('page-' + slug);
   if (detailPage) detailPage.classList.add('active');
 
-  const titles = {jiahe:'嘉禾朗宸府',yihu:'怡湖春晓',yuexiu:'越秀湖与白',wanke:'万科公园传奇',zhongjiao:'中交天府九章'};
-  const subs = {jiahe:'温家山路208号',yihu:'双塘社区·怡心湖C区',yuexiu:'华府大道四段1027号',wanke:'梓州大道南一段·麓湖',zhongjiao:'新程大道·新川南'};
+  const titles = {jiahe:'嘉禾朗宸府',yihu:'怡湖春晓',yuexiu:'越秀湖与白',wanke:'万科公园传奇',zhongjiao:'中交天府九章',yunxiu:'越秀天悦云萃'};
+  const subs = {jiahe:'温家山路208号',yihu:'双塘社区·怡心湖C区',yuexiu:'华府大道四段1027号',wanke:'梓州大道南一段·麓湖',zhongjiao:'新程大道·新川南',yunxiu:'和顺路1号·崔家店'};
   document.getElementById('navTitle').textContent = titles[slug] || '';
   document.getElementById('navSub').textContent = subs[slug] || '';
   document.getElementById('backBtn').style.display = 'flex';
@@ -415,8 +462,8 @@ function goHome() {
   currentPage = 'home';
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-home').classList.add('active');
-  document.getElementById('navTitle').textContent = '成都楼盘分析（五盘）';
-  document.getElementById('navSub').textContent = '怡心湖 · 麓湖 · 新川南';
+  document.getElementById('navTitle').textContent = '成都楼盘分析（六盘）';
+  document.getElementById('navSub').textContent = '怡心湖 · 麓湖 · 新川南 · 崔家店';
   document.getElementById('backBtn').style.display = 'none';
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -445,7 +492,7 @@ goHome = function() {
   const hash = window.location.hash;
   if (hash.startsWith('#/')) {
     const slug = hash.slice(2);
-    if (['jiahe','yihu','yuexiu','wanke','zhongjiao'].includes(slug)) {
+    if (['jiahe','yihu','yuexiu','wanke','zhongjiao','yunxiu'].includes(slug)) {
       showDetail(slug); return;
     }
   }
