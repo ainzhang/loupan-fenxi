@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title>成都楼盘深度分析报告（六盘）</title>
+<title>成都楼盘深度分析报告（七盘）</title>
 <style>
 *,::before,::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -134,7 +134,7 @@ tr:last-child td{border-bottom:none}
   .prop-card .card-arrow{font-size:22px}
   .hero-home{padding:40px 24px 32px}
   .hero-home h1{font-size:24px}
-  .compare-row{margin:8px 20px 16px;gap:8px;grid-template-columns:repeat(6,1fr)}
+  .compare-row{margin:8px 20px 16px;gap:6px;grid-template-columns:repeat(7,1fr);font-size:11px}
   .compare-cell{padding:14px 10px}
   .compare-cell .cc-name{font-size:13px}
   .compare-cell .cc-price{font-size:14px}
@@ -156,8 +156,8 @@ tr:last-child td{border-bottom:none}
 <nav class="navbar" id="navbar">
   <button class="back-btn" id="backBtn" onclick="goHome()" aria-label="返回">←</button>
   <div>
-    <div class="nav-title" id="navTitle">成都楼盘分析（六盘）</div>
-    <div class="nav-sub" id="navSub">怡心湖 · 麓湖 · 新川南 · 崔家店</div>
+    <div class="nav-title" id="navTitle">成都楼盘分析（七盘）</div>
+    <div class="nav-sub" id="navSub">怡心湖 · 麓湖 · 新川南 · 崔家店 · 槐树店</div>
   </div>
 </nav>
 
@@ -165,8 +165,8 @@ tr:last-child td{border-bottom:none}
 <div class="page active" id="page-home">
 
   <div class="hero-home">
-    <h1>🏠 成都楼盘深度分析（六盘）</h1>
-    <p>嘉禾朗宸府 · 怡湖春晓 · 越秀湖与白 · 万科公园传奇 · 中交天府九章 · 越秀天悦云萃<br>全维度对比分析报告</p>
+    <h1>🏠 成都楼盘深度分析（七盘）</h1>
+    <p>嘉禾朗宸府 · 怡湖春晓 · 越秀湖与白 · 万科公园传奇 · 中交天府九章 · 越秀天悦云萃 · 天宸上院<br>全维度对比分析报告</p>
     <div class="tag-row">
       <span class="htag">🔍 环境硬伤</span>
       <span class="htag">📐 户型详解</span>
@@ -207,6 +207,11 @@ tr:last-child td{border-bottom:none}
       <div class="cc-name">🏙️ 越秀天悦云萃</div>
       <div class="cc-price">370-510万</div>
       <span class="cc-tag badge-orange">139㎡五房</span>
+    </div>
+    <div class="compare-cell">
+      <div class="cc-name">🏛️ 天宸上院</div>
+      <div class="cc-price">440-460万</div>
+      <span class="cc-tag badge-blue">143㎡四花园</span>
     </div>
   </div>
 
@@ -284,9 +289,21 @@ tr:last-child td{border-bottom:none}
     <div class="card-arrow">›</div>
   </div>
 
+  <div class="prop-card" onclick="showDetail('tianchen')">
+    <div class="card-top">
+      <div class="card-name">🏛️ 天宸上院</div>
+      <span class="card-badge badge-blue">华润央企</span>
+    </div>
+    <div class="card-meta">
+      <span>📐 143㎡</span><span>💰 440-460万</span><span>🏙️ 成华·槐树店</span>
+    </div>
+    <div class="card-desc">华润置地"四代墅"旗舰产品。143㎡四室三厅三卫双套房+南北四花园体系，得房率约116%实得约160㎡。4.8m客厅开间+15.6m南向面宽+全明电梯厅。主城三环内低密大盘，但交付需等至2027年9月。</div>
+    <div class="card-arrow">›</div>
+  </div>
+
   <div class="footer">
     <p>报告基于公开信息整理（乐居网、房天下、贝壳、搜狐焦点、问政四川、克而瑞等）</p>
-    <p>数据截至 2026.06 · 仅供参考 · 不构成购房建议 · 版本: 202606132200</p>
+    <p>数据截至 2026.06 · 仅供参考 · 不构成购房建议 · 版本: 202606181500</p>
   </div>
 </div>
 
@@ -378,6 +395,36 @@ tr:last-child td{border-bottom:none}
 
 </div><!-- /#app -->
 
+<!-- ========== DETAIL: 天宸上院 ========== -->
+<div class="page" id="page-tianchen">
+  <div class="detail-hero dh-blue">
+    <h1>🏛️ 天宸上院</h1>
+    <div class="dh-sub">成都 · 成华区 · 槐树店板块 · 主城三环内<br>📍 长融东三路155号</div>
+    <div class="dh-tags"><span class="dht">🏢 华润置地</span><span class="dht">📐 143㎡四花园</span><span class="dht">💰 440-460万</span><span class="dht">🌿 四代墅</span></div>
+  </div>
+  <div class="detail-body">
+
+    <div class="dcard green-border">
+      <h2>🔑 一句话总结</h2>
+      <p style="font-size:13px;line-height:1.8">华润置地"四代墅"旗舰产品，143㎡四室三厅三卫+南北四花园体系+全明电梯厅，得房率约<strong style="color:#38a169">116%实得约160㎡</strong>，产品力在成都143赛道属第一梯队。华润央企信用背书+主城三环内+目前未搜到质量维权，<strong>综合风险与中交天府九章并列最低档</strong>。唯一的代价：需等到2027年9月交付。</p>
+    </div>
+
+    <div class="dcard"><h2>📋 楼盘速览</h2><table><tr><th>位置</th><td>成华区保和街道长春社区<strong>长融东三路155号</strong>（槐树店板块，主城三环内）</td></tr><tr><th>开发商</th><td><strong>华润置地</strong>（成都润泽蓉锦，央企）</td></tr><tr><th>容积率</th><td><strong>2.0</strong>/ 绿化率 35%</td></tr><tr><th>总户数</th><td><strong>581户</strong> / 23栋（6F叠拼+16-17F小高层）</td></tr><tr><th>梯户比</th><td>2T2纯板式</td></tr><tr><th>装修</th><td><strong>精装交付</strong></td></tr><tr><th>物业</th><td>润楹物业 | 约4.88元/㎡/月</td></tr><tr><th>交付</th><td><strong>2027年9月30日</strong></td></tr></table></div>
+
+    <div class="dcard green-border"><h2>🏠 143㎡ 户型详解（四花园·四代墅）</h2><table><tr><th>格局</th><td><strong>四室三厅三卫双套房</strong></td></tr><tr><th>得房率</th><td style="color:#38a169;font-weight:700">约 <strong>116%</strong>（实得约158-163㎡）</td></tr><tr><th>花园体系</th><td>🌿南向景观阳台花园 + 🌿北向生活阳台花园 + 🌿全明电梯前室花园 + 🌿入户光厅花园 = <strong>四花园</strong></td></tr><tr><th>客厅</th><td>开间<strong>4.8m</strong>，LDKB一体化约50㎡</td></tr><tr><th>南向面宽</th><td>约<strong>15.6m</strong>，四开间朝南</td></tr><tr><th>阳台</th><td>景观阳台进深约<strong>2.5m</strong>（常规仅1.5-1.8m）</td></tr><tr><th>主卧</th><td>套房，面宽约<strong>3.8-4.0m</strong>，独立卫浴+衣帽间</td></tr><tr><th>入户</th><td>独梯独户，全明电梯厅约<strong>10-13㎡</strong>（270°采光通风）</td></tr><tr><th>层高</th><td><strong>3.1m</strong>（同类通常2.9-3.0m）</td></tr><tr><th>143总价</th><td style="color:#e53e3e;font-weight:700;font-size:16px">约 <strong>440-460万</strong>（精装约3.3万/㎡）</td></tr></table><div class="callout callout-info">🖼️ 户型图查看：楼盘网搜索"华润置地天宸上院143"或微博搜索"天宸上院户型"</div></div>
+
+    <div class="dcard"><h2>🔍 环境硬伤评估</h2><table><tr><th>⚡ 变电站/高压线</th><td style="color:#d69e2e">槐树店/崔家店区域高压线密集（与越秀天悦云萃同片区），周边多盘不利因素公示含变电站 ⚠️</td></tr><tr><th>🏭 历史工业</th><td style="color:#d69e2e">片区原为钢管厂工业用地范畴，现城市更新中 ⚠️</td></tr><tr><th>🏙️ 城市界面</th><td style="color:#d69e2e">属杉板桥外溢板块，周边安置小区密集，更新周期长 ⚠️</td></tr><tr><th>🚰 排污/环卫</th><td style="color:#38a169">主城区排污管网成熟，无特殊风险 ✅</td></tr><tr><th>🌾 农业</th><td style="color:#38a169">主城三环内，无农业风险 ✅</td></tr><tr><th>🏭 工业污染</th><td style="color:#38a169">无大型工厂，区域以住宅+商业为主 ✅</td></tr></table></div>
+
+    <div class="dcard green-border"><h2>✅ 核心优势</h2><table><tr><td>🏢</td><td><strong>华润置地央企</strong>——信用背书强，未搜到质量维权</td></tr><tr><td>📐</td><td><strong>四花园体系+得房率116%</strong>——143㎡实得约160㎡，四代墅产品力成都第一梯队</td></tr><tr><td>🏙️</td><td><strong>主城三环内</strong>——地段优于怡心湖/麓湖/新川南</td></tr><tr><td>🌳</td><td><strong>三面环公园</strong>——17亩市政公园+中庭+私域露台</td></tr><tr><td>🏊</td><td><strong>约3000㎡双会所</strong>——泳池/健身房/书吧/行政酒廊</td></tr><tr><td>🏗️</td><td><strong>2.0容积率+3.1m层高</strong>——主城低密稀缺</td></tr></table></div>
+
+    <div class="dcard orange-border"><h2>⚠️ 需关注的风险</h2><table><tr><th>⏳ 交付等待</th><td>2027年9月，还需等约15个月</td></tr><tr><th>💰 门槛较高</th><td>143户型440-460万，物业费4.88元/㎡/月</td></tr><tr><th>🏙️ 城市界面</th><td>周边安置小区密集，城市更新需时间</td></tr><tr><th>⚡ 区域变电站</th><td>槐树店/崔家店片区高压线密集</td></tr><tr><th>🏫 学区</th><td>树德中学领办在建中，当前偏弱</td></tr><tr><th>🛒 大型商业</th><td>万象城约3km+，日常靠社区底商</td></tr></table></div>
+
+    <div class="dcard blue-border"><h2>📋 看房清单</h2><ul class="checklist"><li>重点看143㎡样板间——感受四花园和4.8m客厅的实际空间</li><li>实测全明电梯厅的采光通风效果</li><li>绕长融东三路看周边城市界面和安置小区</li><li>问清楚精装交付标准明细</li><li>了解树德中学领办校区的建设进度和招生时间</li><li>实测到7号线双店路站步行时间</li><li>去问政四川搜索"天宸上院"看有无最新投诉</li></ul></div>
+
+    <div class="verdict-box"><h2>🎯 综合研判：七盘中与中交天府九章并列最稳</h2><p>适合：<span class="verdict-tag vt-green">预算440-460万</span> <span class="verdict-tag vt-green">看重主城地段</span> <span class="verdict-tag vt-green">追求产品力</span> <span class="verdict-tag vt-green">不急入住</span> <span class="verdict-tag vt-green">信任华润品牌</span></p><p style="margin-top:8px">不适合：<span class="verdict-tag vt-red">预算紧张</span> <span class="verdict-tag vt-red">急需入住</span> <span class="verdict-tag vt-red">对区域变电站敏感</span></p><p style="margin-top:10px;font-size:12px;opacity:.75">🔑 华润央企+四代墅产品力+主城三环内+未搜到维权 = <strong>与中交天府九章并列七盘中综合风险最低</strong>。代价是等15个月，但这个等待换来的产品力是值得的。</p></div>
+  </div>
+</div>
+
 <!-- ========== DETAIL: 越秀天悦云萃三期 ========== -->
 <div class="page" id="page-yunxiu">
   <div class="detail-hero dh-red" style="background:linear-gradient(135deg,#5c3a1a,#8b5a2b,#b87333)">
@@ -450,8 +497,8 @@ function showDetail(slug) {
   const detailPage = document.getElementById('page-' + slug);
   if (detailPage) detailPage.classList.add('active');
 
-  const titles = {jiahe:'嘉禾朗宸府',yihu:'怡湖春晓',yuexiu:'越秀湖与白',wanke:'万科公园传奇',zhongjiao:'中交天府九章',yunxiu:'越秀天悦云萃'};
-  const subs = {jiahe:'温家山路208号',yihu:'双塘社区·怡心湖C区',yuexiu:'华府大道四段1027号',wanke:'梓州大道南一段·麓湖',zhongjiao:'新程大道·新川南',yunxiu:'和顺路1号·崔家店'};
+  const titles = {jiahe:'嘉禾朗宸府',yihu:'怡湖春晓',yuexiu:'越秀湖与白',wanke:'万科公园传奇',zhongjiao:'中交天府九章',yunxiu:'越秀天悦云萃',tianchen:'天宸上院'};
+  const subs = {jiahe:'温家山路208号',yihu:'双塘社区·怡心湖C区',yuexiu:'华府大道四段1027号',wanke:'梓州大道南一段·麓湖',zhongjiao:'新程大道·新川南',yunxiu:'和顺路1号·崔家店',tianchen:'长融东三路155号·槐树店'};
   document.getElementById('navTitle').textContent = titles[slug] || '';
   document.getElementById('navSub').textContent = subs[slug] || '';
   document.getElementById('backBtn').style.display = 'flex';
@@ -462,8 +509,8 @@ function goHome() {
   currentPage = 'home';
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-home').classList.add('active');
-  document.getElementById('navTitle').textContent = '成都楼盘分析（六盘）';
-  document.getElementById('navSub').textContent = '怡心湖 · 麓湖 · 新川南 · 崔家店';
+  document.getElementById('navTitle').textContent = '成都楼盘分析（七盘）';
+  document.getElementById('navSub').textContent = '怡心湖 · 麓湖 · 新川南 · 崔家店 · 槐树店';
   document.getElementById('backBtn').style.display = 'none';
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -492,7 +539,7 @@ goHome = function() {
   const hash = window.location.hash;
   if (hash.startsWith('#/')) {
     const slug = hash.slice(2);
-    if (['jiahe','yihu','yuexiu','wanke','zhongjiao','yunxiu'].includes(slug)) {
+    if (['jiahe','yihu','yuexiu','wanke','zhongjiao','yunxiu','tianchen'].includes(slug)) {
       showDetail(slug); return;
     }
   }
